@@ -1,7 +1,6 @@
 package lectures.part1basics
 
 import scala.annotation.tailrec
-import scala.jdk.Accumulator
 
 object Recurrsion extends App {
 
