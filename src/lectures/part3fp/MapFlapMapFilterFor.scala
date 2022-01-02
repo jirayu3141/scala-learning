@@ -1,29 +1,29 @@
 package lectures.part3fp
 
-object MapFlapMapFilterFor extends App{
+object MapFlapMapFilterFor extends App {
 
-  val list = List(1,2,3)
+  val list = List(1, 2, 3)
   println(list.head)
   println(list.tail)
 
   //map
-  val test = list.map(x => x+1)
-  println(list.map(x => x+1))
-  println(list.map(_+1))
-  println(list.map(_+ " is a member"))
+  val test = list.map(x => x + 1)
+  println(list.map(x => x + 1))
+  println(list.map(_ + 1))
+  println(list.map(_ + " is a member"))
 
   // filter
   println(list.filter(_ % 2 == 0))
 
   // flatMap - for each element, generate a list
-  val toPair: Int => List[Int] = (x: Int) => List(x, x+1)
+  val toPair: Int => List[Int] = (x: Int) => List(x, x + 1)
   println(list.flatMap(toPair))
   // for each of element x in the list, convert it to a list of its own with element of x and x+1
-  println(list.flatMap(x => List(x, x+1)))
+  println(list.flatMap(x => List(x, x + 1)))
 
   // print all combinations between two lists
-  val numbers = List(1 ,2, 3, 4)
-  val chars =  List(1, 2, 3, 4)
+  val numbers = List(1, 2, 3, 4)
+  val chars = List(1, 2, 3, 4)
   val colors = List("black", "white")
   // print List("a1", "a2",..."d4")
 
@@ -37,7 +37,7 @@ object MapFlapMapFilterFor extends App{
   val result2 = numbers.flatMap(n => chars.map(c => c + n.toString))
   println(result2)
 
-  val result3 = numbers.filter(_ % 2 == 0).flatMap(n => chars.flatMap(c => colors.map( color => "" + c + n + color)))
+  val result3 = numbers.filter(_ % 2 == 0).flatMap(n => chars.flatMap(c => colors.map(color => "" + c + n + color)))
   println(result3)
 
   // for each
@@ -61,19 +61,10 @@ object MapFlapMapFilterFor extends App{
     x * 2
   })
 
-
-  for {
-    n <- list
-    _ <- println("x")
-  }
-
   /*
     A small collection of at most ONE element - Maybe[+T]
     - map, flatMap, filter
    */
-
-
-
 
 
 }
